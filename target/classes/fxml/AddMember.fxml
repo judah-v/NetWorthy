@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="990.0" style="-fx-background-color: #ff5252;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.networthy.AddMemberController">
+   <children>
+      <Pane layoutX="50.0" layoutY="55.0" prefHeight="550.0" prefWidth="885.0" style="-fx-background-color: White; -fx-background-radius: 8;">
+         <children>
+
+            <Label fx:id="display" layoutX="293.0" layoutY="75.0" prefHeight="40.0" prefWidth="300.0" textFill="#f50000">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+
+            <Label layoutX="204.0" layoutY="152.0" text="First Name" textFill="#ff5454">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="memberFirstName" layoutX="419.0" layoutY="144.0" prefHeight="45.0" prefWidth="300.0" promptText="First Name" style="-fx-border-color: #ff5252; -fx-border-width: 2; -fx-background-radius: 22; -fx-border-radius: 20;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+
+            <Label layoutX="204.0" layoutY="207.0" text="Last Name" textFill="#ff5252">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="memberLastName" layoutX="419.0" layoutY="199.0" prefHeight="45.0" prefWidth="300.0" promptText="Last Name" style="-fx-border-color: #ff5252; -fx-border-width: 2; -fx-background-radius: 22; -fx-border-radius: 20;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+
+            <Label layoutX="204.0" layoutY="260.0" text="Email" textFill="#ff5252">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="memberEmail" layoutX="419.0" layoutY="252.0" prefHeight="45.0" prefWidth="300.0" promptText="member@domain.com" style="-fx-border-color: #ff5252; -fx-border-width: 2; -fx-background-radius: 22; -fx-border-radius: 20;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+
+            <Label layoutX="204.0" layoutY="315.0" text="LinkedIn" textFill="#ff5252">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="memberLinkedin" layoutX="419.0" layoutY="307.0" prefHeight="45.0" prefWidth="300.0" promptText="linkedin.com/in/..." style="-fx-border-color: #ff5252; -fx-border-width: 2; -fx-background-radius: 22; -fx-border-radius: 20;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+
+            <Label layoutX="204.0" layoutY="370.0" text="Phone" textFill="#ff5252">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField id="memberPhone" fx:id="memberPhone" layoutX="419.0" layoutY="362.0" prefHeight="45.0" prefWidth="300.0" promptText="Phone" style="-fx-border-color: #ff5252; -fx-border-width: 2; -fx-background-radius: 22; -fx-border-radius: 20;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+
+            <Button fx:id="add" focusTraversable="false" layoutX="400.0" layoutY="471.0" mnemonicParsing="false" onAction="#AddCustomer" prefHeight="40.0" prefWidth="85.0" styleClass="button1" text="ADD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

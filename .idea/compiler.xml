@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="NetWorthy" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="NetWorthy" options="-bootclasspath C:\Users\Student\.jdks\corretto-1.8.0_432\jre\lib\resources.jar;C:\Users\Student\.jdks\corretto-1.8.0_432\jre\lib\rt.jar;C:\Users\Student\.jdks\corretto-1.8.0_432\jre\lib\sunrsasign.jar;C:\Users\Student\.jdks\corretto-1.8.0_432\jre\lib\jsse.jar;C:\Users\Student\.jdks\corretto-1.8.0_432\jre\lib\jce.jar;C:\Users\Student\.jdks\corretto-1.8.0_432\jre\lib\charsets.jar;C:\Users\Student\.jdks\corretto-1.8.0_432\jre\lib\jfr.jar;C:\Users\Student\.jdks\corretto-1.8.0_432\jre\classes;$USER_HOME$/.jdks/corretto-1.8.0_432/jre/lib/jfxrt.jar" />
+    </option>
+  </component>
+</project>
