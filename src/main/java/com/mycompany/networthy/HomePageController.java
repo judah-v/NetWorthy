@@ -27,20 +27,20 @@ public class HomePageController implements Initializable {
     @FXML
     private Button loadNetworkDataBtn;
      @FXML
-    private TableView<MemberData> MemberTable;
+    private TableView<Member> MemberTable;
     @FXML
-    private TableColumn<MemberData,Integer> memberID;
+    private TableColumn<Member,Integer> memberID;
     @FXML
-    private TableColumn<MemberData,String> memberFirstName;
+    private TableColumn<Member,String> memberFirstName;
     @FXML
-    private TableColumn<MemberData,String> memberLastName;
+    private TableColumn<Member,String> memberLastName;
     @FXML
-    private TableColumn<MemberData,String> memberEmail;
+    private TableColumn<Member,String> memberEmail;
     @FXML
-    private TableColumn<MemberData,String> memberLinkedin;
+    private TableColumn<Member,String> memberLinkedin;
     @FXML
-    private TableColumn<MemberData,String> memberPhone;
-    private ObservableList<MemberData>data;
+    private TableColumn<Member,String> memberPhone;
+    private ObservableList<Member>data;
     @FXML
     private Label title;
 
@@ -51,19 +51,20 @@ public class HomePageController implements Initializable {
     PreparedStatement ps = con.prepareStatement("SELECT * FROM members");
     ResultSet rs = ps.executeQuery();
     while(rs.next()){
-    data.add(new MemberData(rs.getInt("id"),rs.getString("first_name"),rs.getString("last_name"),rs.getString("email"),rs.getString("linkedin"),rs.getInt("phone")));
+    data.add(new Member(rs.getInt("id"),rs.getString("first_name"),rs.getString("last_name"),rs.getString("email"),rs.getString("linkedin"),rs.getString("phone")));
     }
-            memberID.setCellValueFactory(new PropertyValueFactory<MemberData,Integer>("Id"));
-            memberFirstName.setCellValueFactory(new PropertyValueFactory<MemberData,String>("FirstName"));
-            memberLastName.setCellValueFactory(new PropertyValueFactory<MemberData,String>("LastName"));
-            memberEmail.setCellValueFactory(new PropertyValueFactory<MemberData,String>("Email"));
-            memberLinkedin.setCellValueFactory(new PropertyValueFactory<MemberData,String>("Linkedin"));
-            memberPhone.setCellValueFactory(new PropertyValueFactory<MemberData,String>("Phone"));
+            memberID.setCellValueFactory(new PropertyValueFactory<Member,Integer>("Id"));
+            memberFirstName.setCellValueFactory(new PropertyValueFactory<Member,String>("FirstName"));
+            memberLastName.setCellValueFactory(new PropertyValueFactory<Member,String>("LastName"));
+            memberEmail.setCellValueFactory(new PropertyValueFactory<Member,String>("Email"));
+            memberLinkedin.setCellValueFactory(new PropertyValueFactory<Member,String>("Linkedin"));
+            memberPhone.setCellValueFactory(new PropertyValueFactory<Member,String>("Phone"));
             MemberTable.setItems(null);
             MemberTable.setItems(data);
             ps.close();
             rs.close();
             con.close();
+            loadNetworkDataBtn.setText("REFRESH NETWORK");
     }
      @FXML
     public void AddMember(ActionEvent event) throws IOException{
@@ -83,7 +84,7 @@ public class HomePageController implements Initializable {
         stage.show();
     }
     @FXML
-    public void EditCustomerData(ActionEvent event) throws IOException{
+    public void UpdateMemberInfo(ActionEvent event) throws IOException{
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/UpdateMember.fxml"));
@@ -95,13 +96,13 @@ public class HomePageController implements Initializable {
         stage.getIcons().add(icon);
         stage.setResizable(false);
         stage.sizeToScene();
-        stage.setTitle("Edit Customer Page");
+        stage.setTitle("Update Member Information");
         stage.setScene(scene);
         stage.show();
 
     }
     @FXML
-    public void DeleteCustomerData(ActionEvent event) throws IOException{
+    public void DeleteMember(ActionEvent event) throws IOException{
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/DeleteMember.fxml"));
@@ -113,7 +114,7 @@ public class HomePageController implements Initializable {
         stage.getIcons().add(icon);
         stage.setResizable(false);
         stage.sizeToScene();
-        stage.setTitle("Delete Customer Page");
+        stage.setTitle("Remove Member");
         stage.setScene(scene);
         stage.show();
     }

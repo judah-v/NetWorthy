@@ -24,8 +24,8 @@
       <Pane layoutX="1100.0" layoutY="215.0" prefHeight="360.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
             <Button layoutX="10.0" layoutY="28.0" mnemonicParsing="false" onAction="#AddMember" prefHeight="55.0" prefWidth="200.0" text="ADD MEMBER" />
-            <Button layoutX="10.0" layoutY="113.0" mnemonicParsing="false" onAction="#EditCustomerData" prefHeight="55.0" prefWidth="200.0" text="EDIT MEMBER INFO" />
-            <Button layoutX="10.0" layoutY="198.0" mnemonicParsing="false" onAction="#DeleteCustomerData" prefHeight="55.0" prefWidth="200.0" text="REMOVE MEMBER" />
+            <Button layoutX="10.0" layoutY="113.0" mnemonicParsing="false" onAction="#UpdateMemberInfo" prefHeight="55.0" prefWidth="200.0" text="EDIT MEMBER INFO" />
+            <Button layoutX="10.0" layoutY="198.0" mnemonicParsing="false" onAction="#DeleteMember" prefHeight="55.0" prefWidth="200.0" text="REMOVE MEMBER" />
             <Button fx:id="loadNetworkDataBtn" layoutX="10.0" layoutY="283.0" mnemonicParsing="false" onAction="#LoadNetworkData" prefHeight="55.0" prefWidth="200.0" text="LOAD NETWORK" />
          </children>
       </Pane>

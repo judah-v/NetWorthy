@@ -28,7 +28,7 @@ public class AddMemberController implements Initializable {
     @FXML
     private TextField memberPhone;
     @FXML
-    public void AddCustomer(ActionEvent event) throws SQLException, FileNotFoundException {
+    public void AddMember(ActionEvent event) throws SQLException, FileNotFoundException {
         if (memberFirstName.getText().isEmpty() || memberLastName.getText().isEmpty() || memberEmail.getText().isEmpty() || memberLinkedin.getText().isEmpty()) {
             display.setText("Please Complete All Fields");
         } else {
@@ -47,6 +47,8 @@ public class AddMemberController implements Initializable {
                 memberLinkedin.setText("");
                 memberPhone.setText("");
                 display.setText("New Customer Added Successfully");
+                memberEmail.getScene().getWindow().hide();
+
             } else {
                 display.setText("Failed To Add New Customer");
             }

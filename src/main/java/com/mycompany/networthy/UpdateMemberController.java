@@ -18,7 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
+import javafx.scene.input.*;
 
 public class UpdateMemberController implements Initializable {
     @FXML
@@ -52,7 +52,7 @@ public class UpdateMemberController implements Initializable {
                 memberLinkedin.setText(rs.getString("linkedin"));
                 memberPhone.setText(Integer.toString(rs.getInt("phone")));
             } else {
-                display.setText("Customer Not Found");
+                display.setText("Member Not Found");
             }
             ps.close();
             rs.close();
@@ -61,17 +61,18 @@ public class UpdateMemberController implements Initializable {
             display.setText("Please Enter The ID Correctly");
         }
     }
-    public void EditMemberInfo(ActionEvent event) throws SQLException, FileNotFoundException {
+    public void EditMemberInfo(ActionEvent event) throws SQLException {
         if (memberFirstName.getText().isEmpty() || memberLastName.getText().isEmpty()) {
             display.setText("Please Add Complete Name");
         } else {
+
             Connection con = DbConnection.Connection();
             PreparedStatement ps = con.prepareStatement("UPDATE members SET first_name = ? ,last_name = ? ,email = ? , linkedin = ?, phone = ? WHERE id = '" + Integer.parseInt(memberID.getText()) + "'");
             ps.setString(1, memberFirstName.getText());
             ps.setString(2, memberLastName.getText());
             ps.setString(3, memberEmail.getText());
             ps.setString(4, memberLinkedin.getText());
-            ps.setInt(5, Integer.parseInt(memberPhone.getText()));
+            ps.setString(5, memberPhone.getText());
 
             int i = ps.executeUpdate();
             if (i > 0) {
@@ -81,8 +82,9 @@ public class UpdateMemberController implements Initializable {
                 memberLinkedin.setText("");
                 memberPhone.setText("");
                 display.setText("Member Info Updated Successfully");
+                memberEmail.getScene().getWindow().hide();
             } else {
-                display.setText("Failed To Update Customer Info");
+                display.setText("Failed To Update Member Info");
             }
             ps.close();
             con.close();
@@ -101,9 +103,10 @@ public class UpdateMemberController implements Initializable {
                 memberEmail.setText("");
                 memberLinkedin.setText("");
                 memberPhone.setText("");
-                display.setText("Successfully Removed The Customer");
+                display.setText("Successfully Removed Member");
+                memberEmail.getScene().getWindow().hide();
             } else {
-                display.setText("Failed To Find The Customer");
+                display.setText("Failed To Find Member");
             }
             ps.close();
             con.close();
